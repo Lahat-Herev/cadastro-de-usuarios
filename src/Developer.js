@@ -1,9 +1,9 @@
-import { Users } from "./Users";
+import { User } from "./User";
 
-export default class Developers extends Users {
+export default class Developer extends User {
   #skills = [];
-  constructor(name, age, skills) {
-    super(name, age);
+  constructor(name, age, weight, height, skills) {
+    super(name, age, weight, height);
     this.#skills = skills;
   }
 

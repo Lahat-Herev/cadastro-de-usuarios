@@ -1,23 +1,39 @@
-import Developers from "./Developer";
+import Developer from "./Developer";
 
-export default class BackEnd extends Developers {
+export default class BackEnd extends Developer {
   #databases;
-  constructor(name, age, skills, databases) {
-    super(name, age, skills);
+  #messageQueues;
+  constructor(name, age, weight, height, skills, databases, messageQueues) 
+  {
+    super(name, age, weight, height, skills);
     this.#databases = databases;
+    this.#messageQueues = messageQueues;
   }
 
-  getSkill() {
+  getSkills() 
+  {
     this.skills.forEach((element) => {
       return element;
     });
   }
 
-  getDatabase() {
+  getDatabase() 
+  {
     return this.#databases;
   }
 
-  setDatabase(value) {
+  setDatabase(value) 
+  {
     this.#databases = value;
+  }
+
+  getMessageQueue()
+  {
+    return this.#messageQueues;
+  }
+
+  setMessageQueue(value)
+  {
+    this.#messageQueues = value;
   }
 }
