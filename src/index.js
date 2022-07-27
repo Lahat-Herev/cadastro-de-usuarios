@@ -1,7 +1,7 @@
 import "./styles.css";
-import Users from "./Users";
+import User from "./User";
 
-const user = new Users("Pedro Arthur", 20, 75.5, 1.67);
+const user = new User("Pedro Arthur", 20, 75.5, 1.67);
 
 document.getElementById("app").innerHTML = `
 <section>
