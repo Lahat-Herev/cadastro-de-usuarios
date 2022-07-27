@@ -1,10 +1,13 @@
 import "./styles.css";
+import Users from "./Users";
+
+const user = new Users("Pedro Arthur", 20, 75.5, 1.67);
 
 document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
+<section>
+  <details>
+    <summary>Minhas informações: </summary>
+    <p>${user.info()}</p>
+  </details>
+</section>
 `;
