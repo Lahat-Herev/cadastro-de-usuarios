@@ -36,4 +36,15 @@ export default class BackEnd extends Developer {
   {
     this.#messageQueues = value;
   }
+
+  info() {
+    return `
+    Meu nome é ${this.name}; tenho ${
+      this.age
+    } anos, meço ${this.getHeight()} metros e peso ${this.getWeight()}kg.
+    Tenho conhecimentos nos seguintes Banco de Dados: ${this.getDatabase()} 
+    e em sistema de messageria, como: ${this.getMessageQueue()};
+    além disso, tenho conhecimentos em: ${this.getSkills()}.
+    `;
+  }
 }
