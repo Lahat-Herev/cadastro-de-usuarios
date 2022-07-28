@@ -1,4 +1,4 @@
-import { User } from "./User";
+import User from "./User";
 
 export default class Developer extends User {
   #skills = [];
@@ -8,7 +8,12 @@ export default class Developer extends User {
   }
 
   getSkill() {
-    return this.#skills;
+    for (const key in this.#skills) {
+      if (this.#skills.hasOwnProperty(key)) {
+        const element = this.#skills[key];
+        return element;
+      }
+    }
   }
 
   setSkill(value) {

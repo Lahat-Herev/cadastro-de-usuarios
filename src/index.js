@@ -4,8 +4,24 @@ import "./styles.css";
 import User from "./User";
 
 const user = new User("Joao", 20, 75.5, 1.67);
-const frontEndDeveloper = new FrontEnd("Jose", 21, 85.5, 1.57, {"ProtoType": "Figma", "IDE": "VS Code", "API": "Postman"}, {"JS": "React"}, {"Test": ["Cucumber", "Capybara", "Selenium"]});
-const backEndDeveloper = new BackEnd("Jonas", 22, 95.5, 1.80, {"Languages" : ["PHP", "Ruby", "Go"]}, {"Relationals": ["MariaDB", "SQL Server"], "NoRelationals": ["MongoDB"]}, {"Data Flow": ["Apache Kafka", "RabbitMQ", "Redis"]});
+const frontEndDeveloper = new FrontEnd(
+  "Jose",
+  21,
+  85.5,
+  1.57,
+  { "Project Prototype": "Figma", IDE: "VS Code", Api: "Postman" },
+  { JS: "React" },
+  { Test: ["Cucumber", "Capybara", "Selenium"] }
+);
+const backEndDeveloper = new BackEnd(
+  "Jonas",
+  22,
+  95.5,
+  1.8,
+  { Languages: ["PHP", "Ruby", "Go"] },
+  { Relationals: ["MariaDB", "SQL Server"], NoRelationals: ["MongoDB"] },
+  { "Data Flow": ["Apache Kafka", "RabbitMQ", "Redis"] }
+);
 
 document.getElementById("app").innerHTML = `
 <section>
