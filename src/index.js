@@ -9,7 +9,7 @@ const frontEndDeveloper = new FrontEnd(
   21,
   85.5,
   1.57,
-  { "Project Prototype": "Figma", IDE: "VS Code", Api: "Postman" },
+  { Project: "Figma", IDE: "VS Code", Api: "Postman" },
   { JS: "React" },
   { Test: ["Cucumber", "Capybara", "Selenium"] }
 );
@@ -20,7 +20,7 @@ const backEndDeveloper = new BackEnd(
   1.8,
   { Languages: ["PHP", "Ruby", "Go"] },
   { Relationals: ["MariaDB", "SQL Server"], NoRelationals: ["MongoDB"] },
-  { "Data Flow": ["Apache Kafka", "RabbitMQ", "Redis"] }
+  { DataFlow: ["Apache Kafka", "RabbitMQ", "Redis"] }
 );
 
 document.getElementById("app").innerHTML = `

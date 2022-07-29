@@ -14,16 +14,20 @@ export default class BackEnd extends Developer {
   }
 
   getDatabase() {
-    for (const key in this.#databases) {
-      if (this.#databases.hasOwnProperty(key)) {
-        const element = this.#databases[key];
+    let databases = Object.entries(this.#databases);
+    for (const database of databases) {
+      const [, items] = database.map((element) => {
         return element;
-      }
+      });
+      const item = items.map(function (elements) {
+        return elements;
+      });
+      console.log(item);
     }
   }
 
   setDatabase(value) {
-    this.#databases = value;
+    this.#databases.push(value);
   }
 
   getMessageQueue() {
@@ -36,7 +40,7 @@ export default class BackEnd extends Developer {
   }
 
   setMessageQueue(value) {
-    this.#messageQueues = value;
+    this.#messageQueues.push(value);
   }
 
   info() {
@@ -44,9 +48,9 @@ export default class BackEnd extends Developer {
     Meu nome é ${this.name}; tenho ${
       this.age
     } anos, meço ${this.getHeight()} metros e peso ${this.getWeight()}kg.
-    Tenho conhecimentos nos seguintes banco de dados: ${this.getDatabase()} 
-    e em sistema de messageria, como: ${this.getMessageQueue()};
-    além disso, tenho conhecimentos em: ${this.getSkill()}.
+    Tenho conhecimento nas seguintes linguagens: ${this.getSkill()}.
+    Tenho conhecimentos nos seguintes banco de dados: ${this.getDatabase()}.
+    Tenho conhecimentos nos  sistema de messageria, como: ${this.getMessageQueue()};
     `;
   }
 }

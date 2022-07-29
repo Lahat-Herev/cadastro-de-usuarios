@@ -17,6 +17,6 @@ export default class Developer extends User {
   }
 
   setSkill(value) {
-    this.#skills = value;
+    this.#skills.push(value);
   }
 }
