@@ -4,15 +4,17 @@ import "./styles.css";
 import User from "./User";
 
 const user = new User("Joao", 20, 75.5, 1.67);
+
 const frontEndDeveloper = new FrontEnd(
   "Jose",
   21,
   85.5,
   1.57,
-  { "Project Prototype": "Figma", IDE: "VS Code", Api: "Postman" },
-  { JS: "React" },
+  { ProjectPrototype: "Figma", IDE: "VS Code", Api: "Postman" },
+  { JS: ["React", "Vue", "NextJS"] },
   { Test: ["Cucumber", "Capybara", "Selenium"] }
 );
+
 const backEndDeveloper = new BackEnd(
   "Jonas",
   22,
@@ -20,7 +22,7 @@ const backEndDeveloper = new BackEnd(
   1.8,
   { Languages: ["PHP", "Ruby", "Go"] },
   { Relationals: ["MariaDB", "SQL Server"], NoRelationals: ["MongoDB"] },
-  { "Data Flow": ["Apache Kafka", "RabbitMQ", "Redis"] }
+  { DataFlow: ["Apache Kafka", "RabbitMQ", "Redis"] }
 );
 
 document.getElementById("app").innerHTML = `
@@ -32,13 +34,13 @@ document.getElementById("app").innerHTML = `
 </section>
 <section>
   <details>
-    <summary>Informações do segundo usuário: </summary>
+    <summary>Informações do dev front-end: </summary>
     <p>${frontEndDeveloper.info()}</p>
   </details>
 </section>
 <section>
   <details>
-    <summary>Informações do terceiro usuário: </summary>
+    <summary>Informações do dev back-end: </summary>
     <p>${backEndDeveloper.info()}</p>
   </details>
 </section>

@@ -8,15 +8,18 @@ export default class Developer extends User {
   }
 
   getSkill() {
-    for (const key in this.#skills) {
-      if (this.#skills.hasOwnProperty(key)) {
-        const element = this.#skills[key];
+    let skills = Object.entries(this.#skills);
+    let skillItems = [];
+    for (const skill of skills) {
+      const [typeOf, items] = skill.map((element) => {
         return element;
-      }
+      });
+      typeOf && skillItems.push(`${typeOf}: ${items}`);
     }
+    return skillItems;
   }
 
   setSkill(value) {
-    this.#skills = value;
+    this.#skills.push(value);
   }
 }
