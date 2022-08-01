@@ -19,7 +19,7 @@ export default class FrontEnd extends Developer {
   }
 
   setFrontFrameworks(value) {
-    this.#frontFrameworks = value;
+    this.#frontFrameworks.push(value);
   }
 
   getSkills() {
@@ -36,7 +36,7 @@ export default class FrontEnd extends Developer {
   }
 
   setTests(value) {
-    this.#tests = value;
+    this.#tests.push(value);
   }
 
   info() {
