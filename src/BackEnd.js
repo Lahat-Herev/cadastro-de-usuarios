@@ -9,8 +9,16 @@ export default class BackEnd extends Developer {
     this.#messageQueues = messageQueues;
   }
 
-  getSkills() {
-    return super.getSkill();
+  getSkill() {
+    let skills = Object.entries(super.getSkill());
+    let skillItems = [];
+    for (const skill of skills) {
+      const [, items] = skill.map((element) => {
+        return element;
+      });
+      skillItems.push(items);
+    }
+    return skillItems;
   }
 
   getDatabase() {
@@ -52,7 +60,7 @@ export default class BackEnd extends Developer {
     } anos, meço ${this.getHeight()} metros e peso ${this.getWeight()}kg.
     Tenho conhecimentos nos seguintes banco de dados: ${this.getDatabase()} 
     e em sistemas de messageria, como: ${this.getMessageQueue()};
-    além disso, tenho conhecimentos em: ${this.getSkills()}.
+    além disso, tenho conhecimentos em: ${this.getSkill()}.
     `;
   }
 }
