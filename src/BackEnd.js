@@ -10,7 +10,15 @@ export default class BackEnd extends Developer {
   }
 
   getSkills() {
-    return super.getSkill();
+    let skills = Object.entries(super.getSkill());
+    let skillItems = [];
+    for (const skill of skills) {
+      const [, items] = skill.map((element) => {
+        return element;
+      });
+      skillItems.push(items);
+    }
+    return skillItems;
   }
 
   getDatabase() {
