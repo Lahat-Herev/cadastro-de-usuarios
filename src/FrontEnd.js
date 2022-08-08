@@ -23,7 +23,15 @@ export default class FrontEnd extends Developer {
   }
 
   getSkills() {
-    return this.getSkill();
+    let skills = Object.entries(super.getSkill());
+    let skillItems = [];
+    for (const skill of skills) {
+      const [typeOf, items] = skill.map((element) => {
+        return element;
+      });
+      typeOf && skillItems.push(`${typeOf}: ${items}`);
+    }
+    return skillItems;
   }
 
   getTests() {
