@@ -1,15 +1,18 @@
 import Developer from "./Developer";
 
-export default class BackEnd extends Developer {
+export default class BackEnd extends Developer 
+{
   #databases = [];
   #messageQueues = [];
-  constructor(name, age, weight, height, skills, databases, messageQueues) {
+  constructor(name, age, weight, height, skills, databases, messageQueues) 
+  {
     super(name, age, weight, height, skills);
     this.#databases = databases;
     this.#messageQueues = messageQueues;
   }
 
-  getSkills() {
+  getSkill() 
+  {
     let skills = Object.entries(super.getSkill());
     let skillItems = [];
     for (const skill of skills) {
@@ -21,7 +24,8 @@ export default class BackEnd extends Developer {
     return skillItems;
   }
 
-  getDatabase() {
+  getDatabase() 
+  {
     let databases = Object.entries(this.#databases);
     let dbItems = [];
     for (const database of databases) {
@@ -36,11 +40,13 @@ export default class BackEnd extends Developer {
     return dbItems;
   }
 
-  setDatabase(value) {
+  setDatabase(value) 
+  {
     this.#databases.push(value);
   }
 
-  getMessageQueue() {
+  getMessageQueue() 
+  {
     for (const key in this.#messageQueues) {
       if (this.#messageQueues.hasOwnProperty(key)) {
         const element = this.#messageQueues[key];
@@ -53,14 +59,15 @@ export default class BackEnd extends Developer {
     this.#messageQueues.push(value);
   }
 
-  info() {
+  info() 
+  {
     return `
     Meu nome é ${this.name}; tenho ${
       this.age
     } anos, meço ${this.getHeight()} metros e peso ${this.getWeight()}kg.
     Tenho conhecimentos nos seguintes banco de dados: ${this.getDatabase()} 
     e em sistemas de messageria, como: ${this.getMessageQueue()};
-    além disso, tenho conhecimentos em: ${this.getSkills()}.
+    além disso, tenho conhecimentos em: ${this.getSkill()}.
     `;
   }
 }
